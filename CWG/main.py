@@ -2,6 +2,7 @@ import pygame
 import random
 import modemgr
 import mode
+import textscreenmode
 
 # Initialize pygame
 pygame.init()
@@ -25,7 +26,21 @@ clock = pygame.time.Clock()
 # create modes
 modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("bdg", "bdg.png", "title"))
 modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("title", "cwg_screen.png", "main_menu"))
-modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("main_menu", "main_menu.png", "bdg"))
+modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("main_menu", "main_menu.png", "about"))
+
+aboutscreen = textscreenmode.TextScreenMode("about", "credits")
+aboutscreen.drawtext(16, 16, "About")
+aboutscreen.drawtext(16, 96, "Click to continue")
+modemgr.g_modemgr.add_mode(aboutscreen)
+
+creditsscreen = textscreenmode.TextScreenMode("credits", "main_menu")
+creditsscreen.drawtext(16, 16, "Credits")
+creditsscreen.drawtext(16, 32, "Programming: Dave LeCompte")
+creditsscreen.drawtext(16, 40, "Art(?): Dave LeCompte")
+creditsscreen.drawtext(16, 48, "Design: Dave LeCompte")
+creditsscreen.drawtext(16, 64, "Uses PyGame, PyGBag")
+creditsscreen.drawtext(16, 96, "Click to continue")
+modemgr.g_modemgr.add_mode(creditsscreen)
 
 # choose starting mode
 modemgr.g_modemgr.set_mode_by_name("bdg")

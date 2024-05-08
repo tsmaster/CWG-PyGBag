@@ -10,15 +10,72 @@ https://pygame-web.github.io/
 
 https://medium.com/@msgold/from-desktop-to-web-deploying-pygame-projects-with-pybag-a4344a7e06ee
 
+DEPENDENCIES
+--------------------
+pygbag
+pygame
+
+TO RUN
+--------------------
+source cwg_env/bin/activate
+
+[local]
+cd CWG
+python main.py
+
+[web]
+gbag CWG
+
+
+LOG
+--------------------
+May 8 2024
+------------
+Copied makefont.py and connected code into Tools/
+
+Made github/gitkraken repo
+
+Made first pass About, Credits screens
+
+
+
+
+
+
 
 
 
 
 TODO
 --------------------
-bitmapped font display
-  makefont (again?)
 
+Enginey Stuff
+----------------
+bitmapped font display [First Pass]
+  makefont (again?) [DONE]
+
+OLC retro menu system
+
+sprite stacking
+
+joystick support(?)
+
+rewrite to use OPENGL
+  framebuffer for 2d work, then drawn in a single drawcall as a quad
+
+look into data as assets, e.g. for information about cities
+
+
+Font Improvements
+  create font class
+  draw scaled
+  draw with color
+
+favico
+
+
+Gamey Stuff
+----------------
 Menu screen with real working menu
   options screen
   load game option
@@ -26,13 +83,13 @@ Menu screen with real working menu
   restart/quit
   about/credits
 
-about screen that goes back to the menu
-  using font display?
-
-OLC retro menu system
+about screen [First Pass]
+  that goes back to the menu
+  using font display? [DONE]
 
 sounds
-
+  for clicks when advancing from screen to screen
+  
 2d drive around a "city" mode
 
 pseudo-3d (OutRun, Pole Position) drive on a highway mode
@@ -42,8 +99,6 @@ pseudo-3d (OutRun, Pole Position) drive on a highway mode
 2d arena htn CTF mode
 
 first person (bzone) arena mode
-
-sprite stacking
 
 create party
 
@@ -60,13 +115,4 @@ create car
 use CapnProto etc to serialize characters / party / cars
 
 conversational dialog system
-
-joystick support(?)
-
-favico
-
-rewrite to use OPENGL
-  framebuffer for 2d work, then drawn in a single drawcall as a quad
-
-look into data as assets, e.g. for information about cities
 
