@@ -1,0 +1,72 @@
+References:
+--------------------
+PyGBag
+https://pypi.org/project/pygbag/
+
+
+https://github.com/pygame-web
+
+https://pygame-web.github.io/
+
+https://medium.com/@msgold/from-desktop-to-web-deploying-pygame-projects-with-pybag-a4344a7e06ee
+
+
+
+
+
+TODO
+--------------------
+bitmapped font display
+  makefont (again?)
+
+Menu screen with real working menu
+  options screen
+  load game option
+  new game
+  restart/quit
+  about/credits
+
+about screen that goes back to the menu
+  using font display?
+
+OLC retro menu system
+
+sounds
+
+2d drive around a "city" mode
+
+pseudo-3d (OutRun, Pole Position) drive on a highway mode
+
+2d arena behavior tree CTF barrel capture mode
+
+2d arena htn CTF mode
+
+first person (bzone) arena mode
+
+sprite stacking
+
+create party
+
+save party to storage
+
+manage parties in storage
+
+load party from storage
+
+create human character
+
+create car
+
+use CapnProto etc to serialize characters / party / cars
+
+conversational dialog system
+
+joystick support(?)
+
+favico
+
+rewrite to use OPENGL
+  framebuffer for 2d work, then drawn in a single drawcall as a quad
+
+look into data as assets, e.g. for information about cities
+

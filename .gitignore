@@ -1,0 +1,8 @@
+cwg_env/lib
+BagTut/build
+Test/build
+CWG/build
+CWG/_pycache_
+
+*.py~
+*.pyc
