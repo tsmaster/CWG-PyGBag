@@ -3,6 +3,7 @@ import random
 import modemgr
 import mode
 import textscreenmode
+import menuscreenmode
 
 # Initialize pygame
 pygame.init()
@@ -26,7 +27,9 @@ clock = pygame.time.Clock()
 # create modes
 modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("bdg", "bdg.png", "title"))
 modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("title", "cwg_screen.png", "main_menu"))
-modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("main_menu", "main_menu.png", "about"))
+
+menuscreen = menuscreenmode.MenuScreenMode("main_menu", "main_menu.png")
+modemgr.g_modemgr.add_mode(menuscreen)
 
 aboutscreen = textscreenmode.TextScreenMode("about", "credits")
 aboutscreen.drawtext(16, 16, "About")
