@@ -31,7 +31,7 @@ modemgr.g_modemgr.add_mode(mode.SimpleScreenMode("title", "cwg_screen.png", "mai
 menuscreen = menuscreenmode.MenuScreenMode("main_menu", "main_menu.png")
 modemgr.g_modemgr.add_mode(menuscreen)
 
-aboutscreen = textscreenmode.TextScreenMode("about", "credits")
+aboutscreen = textscreenmode.TextScreenMode("about", "main_menu")
 aboutscreen.drawtext(16, 16, "About")
 aboutscreen.drawtext(16, 96, "Click to continue")
 modemgr.g_modemgr.add_mode(aboutscreen)
@@ -44,6 +44,11 @@ creditsscreen.drawtext(16, 48, "Design: Dave LeCompte")
 creditsscreen.drawtext(16, 64, "Uses PyGame, PyGBag")
 creditsscreen.drawtext(16, 96, "Click to continue")
 modemgr.g_modemgr.add_mode(creditsscreen)
+
+options_screen = textscreenmode.TextScreenMode("options", "main_menu")
+options_screen.drawtext(16, 16, "Options")
+options_screen.drawtext(16, 96, "Click to continue")
+modemgr.g_modemgr.add_mode(options_screen)
 
 # choose starting mode
 modemgr.g_modemgr.set_mode_by_name("bdg")
@@ -62,7 +67,7 @@ while running:
             running = False
         elif event.type == pygame.MOUSEBUTTONDOWN:
             mouse_x, mouse_y = pygame.mouse.get_pos()
-            mode.mouseclick(mouse_x, mouse_y)
+            mode.mousedown(event)
         elif event.type == pygame.KEYDOWN:
             mode.keydown(event.key)
 

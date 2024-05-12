@@ -18,10 +18,10 @@ class ModeManager:
         self.mode_index = -1
 
     def set_mode_by_index(self, index):
-        if ((self.index >= 0) and
-            (self.index < len(self.modes))):
+        if ((index >= 0) and
+            (index < len(self.modes))):
             self.mode_index = index
-            self.modes[i].init(pygame.time.get_ticks())
+            self.modes[index].init(pygame.time.get_ticks())
         else:
             print("invalid index:", index)
             self.mode_index = -1

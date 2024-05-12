@@ -6,3 +6,5 @@ CWG/_pycache_
 
 *.py~
 *.pyc
+
+*~

@@ -16,7 +16,7 @@ class Mode:
     def draw(self, screen):
         pass
 
-    def mouseclick(self, x, y):
+    def mousedown(self, mouse_event):
         pass
 
     def keydown(self, key):
@@ -42,7 +42,7 @@ class SimpleScreenMode(Mode):
     def draw(self, screen):
         screen.blit(self.img, (0, 0))
 
-    def mouseclick(self, x, y):
+    def mousedown(self, mouse_event):
         timenow = pygame.time.get_ticks()
         elapsed = (timenow - self.init_time) / 1000.0
 

@@ -40,9 +40,59 @@ Made first pass About, Credits screens
 Used https://sfxr.me/ to make click.wav
 
 
+May 9 2024
+------------
+Made a menu screen from the simple text screen
+
+May 10 2024
+------------
+Began writing a JSON-driven, data-oriented UI layout for the main
+menu. The plan is to specify the layout in JSON, create simple UI,
+then listen for events in game code.
+
+This should allow all of the front end menu system to be all specified
+in JSON, with minimal logic in game code.
+
+Currently planning to specify distances in either absolute pixel sizes
+("300px") or as percentages of the screen size ("10%"). Might get
+fancy and use directed distances, so the right edge of a button
+might be "-60px", saying that it's relative to the screen right edge.
+
+Might also do fancy constraint programming (how fancy? If there are
+two constraints, we're done, right?), might provide some sort of math
+system, to allow "SCRN_EDGE_R - 20px"
+
+Colors will be specified in a number of formats, including "white",
+"#00FF00", "#0F0", "RGB(100, 200, 100)", "HSV(100, 100, 100)".
+
+Layout groups can have attributes on them like "child-width",
+"child-spacing" that are used to size and position the children after
+they have been created.
+
+Do child widgets need their size at time of creation? Is resize a
+legit widget method?
 
 
+Suggestion to self: make the simplest version, come back later.
 
+
+May 11 2024
+------------
+
+Made a JSON file (earlier) for UI, wrote code to instantiate buttons
+(with a placeholder system font) based on JSON layout.
+
+buttons return an "action" string when clicked, which I'm parsing for
+commands like "modemgr:goto:credits" to go to the credits screen.
+
+first pass is sort of working, I'm not coming back from credits or
+about, maybe those aren't properly hooked up for now. I want to
+eventually author those in JSON as well.
+
+---
+Update: credits, about, options, all return to the main menu
+
+Tested locally and using pygbag to play in the browser
 
 
 
@@ -65,11 +115,24 @@ rewrite to use OPENGL
 
 look into data as assets, e.g. for information about cities
 
-
 Font Improvements
   create font class
   draw scaled
   draw with color
+
+Button System (for main menu, for now)
+  can tab through buttons using keyboard
+  can "click"/select button using space or enter
+  can rotate through buttons using gamepad
+  can "click" using gamepad button
+  can hover using mouse [DONE]
+  can dehover using mouse [DONE]
+  can click on button using mouse [DONE]
+  can register callbacks on buttons [DONE, not callbacks, but actions]
+  buttons draw bg color rect [DONE]
+  bg color rect is different when hovered [DONE]
+  label should use the bitmapped font code, not system default font
+  
 
 favico
 

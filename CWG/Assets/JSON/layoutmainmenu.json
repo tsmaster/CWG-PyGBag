@@ -1,0 +1,56 @@
+{
+    "name": "main menu",
+
+    "widgets": [
+        {
+            "type": "button-group",
+            "name": "main menu button group",
+            "layout": "vertical",
+            "align": "left",
+            "left-pos": "360px",
+            "top-pos": "64px",
+            "spacing": "20px",
+            "child-width": "240px",
+            "child-height": "40px",
+            "widgets": [
+                {
+                    "type": "button",
+                    "name": "newgame",
+                    "label": "New Game",
+                    "action": "game:new-game"
+                },
+                {
+                    "type": "button",
+                    "name": "loadgame",
+                    "label": "Load Game",
+                    "action": "game:load-game"
+                },
+                {
+                    "type": "button",
+                    "name": "options",
+                    "label": "Options",
+                    "action": "modemgr:goto:options"
+                },
+                {
+                    "type": "button",
+                    "name": "credits",
+                    "label": "Credits",
+                    "action": "modemgr:goto:credits"
+                },
+                {
+                    "type": "button",
+                    "name": "about",
+                    "label": "About",
+                    "action": "modemgr:goto:about"
+                },
+                {
+                    "type": "button",
+                    "name": "restart",
+                    "label": "Restart",
+                    "action": "game:restart"
+                }
+            ]
+        }
+    ]
+}
+                    
